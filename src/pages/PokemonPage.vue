@@ -1,4 +1,9 @@
 <template>
+   <div class="contador">
+      <p class="separar">Correctas: {{correctas}}</p>
+      <p class="separar">Incorrectas: {{incorrectas}}</p>
+      <button @click="resetContador">Reiniciar Contador</button>
+    </div>
   <h1 v-if="!pokemon">Espere por favor...</h1>
   <div v-else>
     <h1>Quien es este Pokemon?</h1>
@@ -40,7 +45,9 @@ export default {
         pokemon: null,
         showPokemon: false,
         showAnswer: false,
-        message: ''
+        message: '',
+        correctas: 0,
+        incorrectas: 0
       }
     },
     methods: {
@@ -57,8 +64,10 @@ export default {
 
         if( selectedId === this.pokemon.id ) {
            this.message = `Correcto, es ${ this.pokemon.name }`
+           this.correctas++
         } else {
            this.message = `Opps!, el pokemon es ${ this.pokemon.name }`
+           this.incorrectas++
         }
       },
       newGame() {
@@ -68,6 +77,10 @@ export default {
         this.pokemon = null
         this.message = ''
         this.mixPokemonArray()
+      },
+      resetContador() {
+        this.correctas = 0
+        this.incorrectas = 0
       }
     },
     mounted() {
@@ -76,6 +89,12 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.contador {
+    display: inline-flex; /*Convertimos al menú en flexbox*/
+    align-items: center; /*con esto alineamos de manera vertical*/
+}
+.separar {
+  margin-right: 30px;
+}
 </style>

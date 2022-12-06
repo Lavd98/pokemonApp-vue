@@ -5,7 +5,7 @@ const getAleatorio = (max, min) => Math.floor( Math.random()*(max - min + 1)+min
 const getRandomPokemonId = (cantidad) => {
     const arrayAleatorio = []
     for(let i = 0; i < cantidad; i++){
-        arrayAleatorio.push(getAleatorio(1, 649))
+        arrayAleatorio.push(getAleatorio(1, 249))
     }
     
     return arrayAleatorio
