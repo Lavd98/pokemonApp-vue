@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PokemonPage Component debe de hacer match con el snapshot 1`] = `
+<div class="contador">
+  <p class="separar">Correctas: 0</p>
+  <p class="separar">Incorrectas: 0</p><button>Reiniciar Contador</button>
+</div>
+<h1>Espere por favor...</h1>
+`;
+
+exports[`PokemonPage Component debe de hacer match con el snapshot cuando cargan los pokemons 1`] = `
+<div class="contador">
+  <p class="separar">Correctas: 0</p>
+  <p class="separar">Incorrectas: 0</p><button>Reiniciar Contador</button>
+</div>
+<div>
+  <h1>Quien es este Pokemon?</h1>
+  <pokemon-picture-stub pokemonid="1" showpokemon="false"></pokemon-picture-stub>
+  <pokemon-options-stub pokemons="[object Object],[object Object],[object Object],[object Object]"></pokemon-options-stub>
+</div>
+`;
